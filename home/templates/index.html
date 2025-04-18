@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vietnam Draft Lookup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <section class="px-5 py-10 mx-auto my-0 bg-neutral-100 max-w-[1200px] max-sm:px-4 max-sm:py-5">
+        <header class="mb-16 text-center max-sm:mb-10">
+            <h1 class="mb-4 text-5xl font-bold text-neutral-700 max-sm:text-3xl">
+                Date Selection
+            </h1>
+            <p class="mx-auto my-0 text-lg leading-relaxed max-w-[600px] text-neutral-500 max-sm:text-base">
+                Select a date to begin your journey. Our intelligent system will help
+                you plan the perfect schedule.
+            </p>
+        </header>
+
+        <article
+            class="p-10 mx-auto my-0 rounded-2xl border border-solid border-neutral-200 max-w-[500px] shadow-[0_4px_24px_rgba(45,71,57,0.08)] max-sm:p-5 max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:rounded-xl">
+            <label for="datePicker" class="block mb-3 text-base font-medium text-neutral-700">
+                Choose your date
+            </label>
+            <input
+                class="p-4 w-full text-base rounded-lg border-2 border-solid transition-all bg-stone-50 border-neutral-200 duration-[0.2s] ease-[ease] text-neutral-700 max-sm:p-3.5 max-sm:h-12 max-sm:text-base max-sm:appearance-none hover:border-[#8fa898] hover:bg-white focus:border-[#2d4739] focus:bg-white focus:shadow-[0_0_0_3px_rgba(45,71,57,0.1)]"
+                id="datePicker" type="date" />
+
+            <section class="p-6 mt-10 text-center rounded-xl bg-zinc-100 max-sm:p-4 max-sm:mt-6">
+                <h2 class="mb-2 text-xl font-semibold text-neutral-700">
+                    Selected Date
+                </h2>
+                <p id="selectedDateDisplay" class="text-lg font-medium min-h-[27px] text-neutral-500">
+                    No date selected
+                </p>
+            </section>
+        </article>
+
+        <footer
+            class="mx-auto mt-10 mb-0 text-base leading-relaxed text-center max-w-[700px] text-neutral-500 max-sm:px-4 max-sm:py-0 max-sm:mt-6 max-sm:text-sm">
+            <p>
+                After selecting your date, you'll receive personalized recommendations
+                based on your chosen timeline. Our system takes into account various
+                factors to ensure the best possible experience.
+            </p>
+        </footer>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // State object to manage component data
+            const state = {
+                selectedDate: "",
+                formattedDate: "",
+
+                // Handler for date change events
+                handleDateChange(event) {
+                    this.selectedDate = event.target.value;
+
+                    if (this.selectedDate) {
+                        const date = new Date(this.selectedDate);
+                        this.formattedDate = date.toLocaleDateString("en-US", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                        });
+                    } else {
+                        this.formattedDate = "";
+                    }
+
+                    // Update the display
+                    this.updateDisplay();
+                },
+
+                // Update the DOM with current state
+                updateDisplay() {
+                    const displayElement = document.getElementById(
+                        "selectedDateDisplay",
+                    );
+                    if (displayElement) {
+                        displayElement.textContent =
+                            this.formattedDate || "No date selected";
+                    }
+                },
+            };
+
+            // Set up event listeners
+            const datePickerInput = document.getElementById("datePicker");
+            if (datePickerInput) {
+                datePickerInput.addEventListener("input", function (event) {
+                    state.handleDateChange(event);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
