@@ -14,7 +14,10 @@ def check_date(request, dateStr):
 
     if records:
         years = []
+        explanations = []
         for record in records:
+            if not record.draftnumber:
+                continue
             draftnumber = int(record.draftnumber)
 
             for admin in admins:
@@ -26,7 +29,11 @@ def check_date(request, dateStr):
                         year = record.draftyear
                         years.append(year)
 
+                        explanation = f"You were drawn number {draftnumber} out of the max of {admin.maxcalled} in {year}"
+                        explanations.append(explanation)
+                
         year_str = ", ".join(str(y) for y in years)
+        explanation_str = ",".join(str(e) for e in explanations)
 
         if len(years) > 0:
             message = (
@@ -37,21 +44,19 @@ def check_date(request, dateStr):
 
             return JsonResponse(
                 {
-                    "found": True,
                     "title": "Drafted",
                     "message": message,
-                    "year_str": year_str,
+                    "explanations": explanation_str.split(','),
                 }
             )
         else:
             return JsonResponse(
                 {
-                    "found": False,
                     "title": "Not drafted",
                     "message": "You would not have been drafted",
                 }
             )
     else:
         return JsonResponse(
-            {"found": False, "title": "No date selected", "message": ""}
+            {"title": "No date selected", "message": ""}
         )

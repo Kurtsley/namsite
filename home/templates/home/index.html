@@ -1,0 +1,104 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vietnam Draft Lookup</title>
+  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+<body>
+  <main class="date-selection-container">
+    <header>
+      <h1 class="date-selection-title">Vietnam Draft Lookup</h1>
+      <p class="date-selection-description">
+        Select a month and day to see if you would have been drafted during the Vietnam War.
+      </p>
+    </header>
+
+    <section class="selection-panel">
+      <div class="dropdown-container">
+        <form method="get">
+          <div id="datepicker-wrapper">
+            <div id="datepicker" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="result-panel" id="result-panel">
+      <h2 class="result-title" id="result-title">Choose date</h2>
+      <div id="result-paragraph"></div>
+      <div id="explanation-paragraph"></div>
+    </section>
+
+    <div class="footer-text">
+      <section>
+        <h2>History of the Vietnam Draft</h2>
+        <p>
+          The Vietnam War draft was managed by the United States Selective Service System and operated from 1964 to
+          1973. Males between the ages of 18 and 26 were required to register for potential military service. In
+          December 1969, the U.S. held its first draft lottery since World War II, using birth dates to assign draft
+          order. This system was intended to streamline the selection process and ensure fairness. Individuals
+          selected
+          were required to serve in the military unless they qualified for deferments or exemptions, such as for
+          education, medical reasons, or certain family circumstances. Approximately 2.2 million men were drafted
+          during
+          the Vietnam era, with the majority serving in the Army. The draft officially ended in 1973 when the U.S.
+          transitioned to an all-volunteer force.
+        </p>
+      </section>
+
+      <section>
+        <h3>Frequently Asked Questions</h3>
+
+        <h4>Q1: How did the draft lottery system actually work in terms of birth dates and numbers?</h4>
+        <p>
+          Each day of the year was assigned a random number from 1 to 366. Men with birthdays assigned lower numbers
+          were called to service earlier. For example, if July 9 was drawn as number 1, men born on July 9 were the
+          first to be drafted.
+        </p>
+
+        <h4>Q2: What types of deferments or exemptions were commonly granted during the Vietnam draft?</h4>
+        <p>
+          Common deferments included student deferments (for those in college), medical deferments, and hardship
+          deferments (such as being the sole provider for a family). Some were also exempt due to employment in
+          essential civilian occupations or for religious reasons.
+        </p>
+
+        <h4>Q3: What was the process for someone once they were drafted—what happened next?</h4>
+        <p>
+          Once drafted, individuals received an induction notice and were required to report to a local induction
+          center. There, they underwent a physical examination and evaluation. If deemed fit for service, they were
+          assigned to a military branch, typically the Army, and sent to basic training before being deployed.
+        </p>
+      </section>
+    </div>
+
+    <hr class="separator">
+    <footer style="margin-top: 2em;">
+      <h4 class="more-info-title">More Information</h4>
+      <ul class="more-info">
+        <li><a href="https://stat-jet-asu.github.io/Datasets/InstructorDescriptions/vietnamdraft.html" target="_blank"
+            rel="noopener noreferrer">Vietnam Draft Dataset</a></li>
+        <li><a href="https://www.randomservices.org/random/data/Draft.html" target="_blank"
+            rel="noopener noreferrer">Vietnam Draft Lottery Data</a></li>
+        <li><a href="https://www.sss.gov/history-and-records/vietnam-lotteries/" target="_blank"
+            rel="noopener noreferrer">Selective Service Information</a></li>
+        <div style="height: 5rem;"></div>
+        <li class="github-attrib"><a href="https://github.com/Kurtsley/namsite" target="_blank"
+            rel="noopener noreferrer">By Kurtsley - view source on github</a></li>
+      </ul>
+    </footer>
+  </main>
+
+  <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>

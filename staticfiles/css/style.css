@@ -1,0 +1,157 @@
+.date-selection-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: system-ui, sans-serif;
+    background-color: #f4f1eb;
+    min-height: 100vh;
+}
+
+@media (max-width: 640px) {
+    .date-selection-container {
+        padding: 15px;
+    }
+}
+
+.date-selection-title {
+    color: #4a5d4c;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .date-selection-title {
+        font-size: 2rem;
+    }
+}
+
+.date-selection-description {
+    color: #5c5c5c;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.selection-panel {
+    background-color: #e8e4dc;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    /* horizontal center */
+    align-items: center;
+    /* vertical center */
+    position: relative;
+}
+
+.date-dropdown {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #4a5d4c;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.date-dropdown:focus {
+    outline: none;
+    border-color: #6b806d;
+}
+
+.result-panel {
+    background-color: #f8f7f4;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.result-title {
+    color: #4a5d4c;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.selected-date {
+    font-size: 1.25rem;
+    color: #5c5c5c;
+}
+
+.footer-text {
+    color: #5c5c5c;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.flatpickr-calendar .flatpickr-months .cur-year {
+    display: none !important;
+}
+
+.flatpickr-calendar .flatpickr-months .flatpickr-monthDropdown-months {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+}
+
+.flatpickr-calendar .flatpickr-months .flatpickr-monthDropdown-months option {
+    text-align: center;
+}
+
+#explanation-paragraph {
+    margin-top: 20px;
+}
+
+.more-info {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.more-info li {
+    margin: 0.5em 0;
+}
+
+.more-info a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.more-info a:hover {
+    text-decoration: underline;
+}
+
+.more-info-title {
+    color: #5c5c5c;
+    text-align: center;
+}
+
+.separator {
+    border: 1px solid #5c5c5c;
+    margin: 40px 0;
+}
+
+.github-attrib {
+    font-size: 12px;
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.github-attrib:hover {
+    color: #0056b3;
+}
